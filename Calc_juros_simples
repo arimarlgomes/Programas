@@ -1,0 +1,44 @@
+print('')
+print('\033[1;30;46m SIMULADOR DE JUROS SIMPLES \033[m') #Título
+print('')
+
+while True:                         # Ínicio da repetição
+    
+    # Entrada de Dados
+
+    valor = float(input('VALOR INICIAL R$:'))
+    juros_simples = float(input('TAXA DE JUROS MENSAL (%):'))
+    periodo = int(input('PERIODO (em meses):'))
+
+    # cálculos
+    juros_mensal = valor * juros_simples / 100     # juros de 1 mês
+    calc_periodo = juros_mensal * periodo          # juros total
+    total = valor + calc_periodo
+    parcelas = total / periodo
+
+    # resultados
+    print()
+    print(f'\033[1;44m VALOR INICIAL R$:\033[m {valor:.2f}\n')
+    print(f'\033[1;45m TAXAS DE JUROS R$:\033[m {calc_periodo:.2f}\n')
+    print(f'\033[1;46m TOTAL FINAL R$:\033[m {total:.2f}\n')
+    print(f'\033[1;42m VALOR DAS PARCELAS R$: \033[m {parcelas:.2f}\n')
+
+    # Nova consulta(se necessário)
+    nova = input('Deseja fazer uma nova consulta? [S/N]:').strip().upper()
+    print('\n')
+
+    # Condições
+    if nova == 'S':# Qualquer coisa diferente de S encerra
+        print(f'\033[1;41m INICIAR NOVA CONSULTA! \033[m\n')
+    elif nova == 'N':
+        print('CONSULTA ENCERRADA!!')
+        break
+    elif nova!= 's' or 'n':
+        print('\033[1;41m!!!!OPÇÃO INVÁLIDA!!!!\033[m\n')
+        print('\033[1;7;401m[[[[[RECOMEÇAR]]]]]\033[m\n')
+        
+    elif print(nova):
+        break# Sai do while
+
+print('')
+print('FOI UM PRAZER ATENDE-LO(A)!!\n')# Encerra programa
